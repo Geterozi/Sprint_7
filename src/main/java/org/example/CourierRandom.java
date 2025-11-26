@@ -2,7 +2,7 @@ package org.example;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
-public class CourierRandom {
+ public class CourierRandom {
     private String login;
     private String password;
     private String firstName;

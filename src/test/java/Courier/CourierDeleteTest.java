@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class CourierDeleteTest {
+ public class CourierDeleteTest {
     CourierClient client = new CourierClient();
     private String courierId;
     private CourierRandom createdCourier;
