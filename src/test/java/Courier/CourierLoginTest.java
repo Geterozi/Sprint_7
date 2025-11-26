@@ -14,7 +14,7 @@ import io.restassured.response.Response;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
- public class CourierLoginTest {
+public class CourierLoginTest {
 
     CourierClient client = new CourierClient();
     Credentials credentials;

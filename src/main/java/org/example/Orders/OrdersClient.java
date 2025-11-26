@@ -5,7 +5,7 @@ import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
 
- public class OrdersClient {
+public class OrdersClient {
     public static final String BASE_URL = "https://qa-scooter.praktikum-services.ru";
     private static final String ORDERS_URL = "/api/v1/orders";
     private static final String ACCEPT_ORDER_URL = "/api/v1/orders/accept/";

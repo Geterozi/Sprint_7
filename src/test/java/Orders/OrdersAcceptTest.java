@@ -13,7 +13,7 @@ import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.core.IsEqual.equalTo;
 
- public class OrdersAcceptTest {
+public class OrdersAcceptTest {
     private OrdersClient client;
     private Response response;
     private static final int VALID_ORDER_ID = 536578; // предположительно существующий ID заказа

@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
- public class CourierCreateTest {
+public class CourierCreateTest {
         CourierClient client = new CourierClient();
         private String courierId; // Добавляем поле для хранения ID
         private CourierRandom createdCourier; // Добавляем поле для хранения созданного курьера

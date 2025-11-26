@@ -3,7 +3,7 @@ package org.example.Orders;
 import java.util.List;
 import java.util.stream.Stream;
 
- public class OrderData {
+public class OrderData {
     private String firstName;
     private String lastName;
     private String address;

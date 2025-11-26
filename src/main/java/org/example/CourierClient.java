@@ -5,7 +5,7 @@ import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
 
- public class CourierClient {
+public class CourierClient {
     //Документация к базовому URL - https://qa-scooter.praktikum-services.ru/docs/
     public static final String BASE_URL_SCOOTER_PRAKTIKUM_SERVICE = "https://qa-scooter.praktikum-services.ru";
     // Метод Создание курьера
