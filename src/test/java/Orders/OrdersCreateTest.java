@@ -14,7 +14,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
-public class OrdersCreateTest {
+ public class OrdersCreateTest {
     private OrdersClient client = new OrdersClient();
     private OrderData order;
 

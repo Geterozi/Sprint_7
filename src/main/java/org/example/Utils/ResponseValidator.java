@@ -5,7 +5,7 @@ import io.restassured.response.Response;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
-public class ResponseValidator {
+ public class ResponseValidator {
     public static void validateErrorResponseCreateCourier(Response response, String caseName) {
         try {
             assertThat(response.statusCode(), equalTo(400));
