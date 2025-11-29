@@ -14,7 +14,7 @@ public class CourierRandom {
         this.firstName = "Artem";
     }
 
-    // Сохраняем существующий конструктор для совместимости
+    // сохраняем существующий конструктор для совместимости
     public CourierRandom(String login, String password, String firstName) {
         this.login = login;
         this.password = password;

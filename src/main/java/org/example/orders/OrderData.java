@@ -43,7 +43,7 @@ public class OrderData {
         this.comment = comment;
     }
 
-    // Сеттер для цвета
+    // сеттер для цвета
     public void setColor(List<String> color) {
         this.color = color;
     }

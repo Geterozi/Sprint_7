@@ -109,7 +109,7 @@ public class CourierLoginTest {
     @DisplayName("Логин курьера с несуществующей учетной записью")
     @Description("ОР: ответ 404, возвращает сообщение 'Учетная запись не найдена'")
     public void loginCourierWithInvalidCredentials() {
-        // Создаем несуществующие учетные данные (или надо создать курьера, потом удалить и под ним пытаться залогиниться?)
+        // Создаем несуществующие учетные данные
         Credentials invalidCredentials = new Credentials("nonexistentLogin", "wrongPassword");
 
         Response response = client.loginCourier(invalidCredentials);

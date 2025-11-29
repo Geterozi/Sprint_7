@@ -175,7 +175,7 @@ public class CourierCreateTest {
         courier.setLogin(null);
         courier.setPassword(null);
         Response response = client.createCourier(courier);
-        ResponseValidator.validateErrorResponseCreateCourier(response, "Оба поля null");
+        ResponseValidator.validateErrorResponseCreateCourier(response, "Оба  поля null");
     }
 }
 

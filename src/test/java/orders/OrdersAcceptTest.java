@@ -95,7 +95,7 @@ public class OrdersAcceptTest {
     @Description("Проверяем обработку попытки принятия уже принятого заказа")
     @Step("Принятие уже принятого заказа")
     public void testAcceptAlreadyAcceptedOrder() {
-        // Сначала принимаем заказ
+        //  принимаем заказ
         client.acceptOrder(VALID_ORDER_ID, VALID_COURIER_ID);
 
         // Затем пытаемся принять его снова

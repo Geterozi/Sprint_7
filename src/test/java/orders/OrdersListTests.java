@@ -53,7 +53,7 @@ public class OrdersListTests {
     @Description("Проверяем получение заказов конкретного курьера")
     @Step("Получение заказов по ID курьера")
     public void testGetOrdersByCourierId() {
-        // Используем существующий ID курьера (предположим, что 586686 существует)
+        // Используем существующий ID курьера (предположим что 586686 существует)
         int courierId = 586686;
         response = client.getAllOrders(courierId, null, null, null);
 

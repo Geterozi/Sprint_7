@@ -46,7 +46,7 @@ public class CourierDeleteTest {
     @DisplayName("Удаление курьера без ID")
     @Description("ОР: код ответа - 400, сообщение 'Недостаточно данных для удаления курьера'")
     public void deleteCourierWithoutId() {
-        // Попытка удалить курьера без ID (передаем null)
+        // Попытка удалить курьера без ID (null)
         Response deleteResponse = client.deleteCourier(null);
 
         assertThat("Статус ответа должен быть 400",
