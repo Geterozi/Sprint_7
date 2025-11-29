@@ -1,4 +1,4 @@
-package Orders;
+package orders;
 
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -6,7 +6,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import io.qameta.allure.Description;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
-import org.example.Orders.OrdersClient;
+import org.example.orders.OrdersClient;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

@@ -1,9 +1,9 @@
-package Orders;
+package orders;
 
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import jdk.jfr.Description;
-import org.example.Orders.OrdersClient;
+import org.example.orders.OrdersClient;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -26,7 +26,6 @@ public class OrdersAcceptTest {
         client = new OrdersClient();
     }
 
-
     @Test
     @DisplayName("Успешное принятие заказа")
     @Description("Проверяем успешное принятие заказа")
@@ -43,34 +42,20 @@ public class OrdersAcceptTest {
                 is(true));
     }
 
-
-
     @Test
     @DisplayName("Принятие заказа без ID курьера")
     @Description("Проверяем обработку отсутствия ID курьера")
     @Step("Принятие заказа без ID курьера")
     public void testAcceptOrderWithoutCourierId() {
-        try {
-            response = client.acceptOrder(VALID_ORDER_ID, null);
+        response = client.acceptOrder(VALID_ORDER_ID, null);
 
-            // Логирование информации о запросе
-            System.out.println("Статус ответа: " + response.statusCode());
-            System.out.println("Тело ответа: " + response.getBody().asString());
+        assertThat("Статус ответа должен быть 400",
+                response.statusCode(),
+                equalTo(400));
 
-            assertThat("Статус ответа должен быть 400",
-                    response.statusCode(),
-                    equalTo(400));
-
-            assertThat("Ответ должен содержать сообщение об ошибке",
-                    response.jsonPath().getString("message"),
-                    containsString("Недостаточно данных для поиска"));
-        } catch (AssertionError e) {
-            // Вывод детальной информации при ошибке
-            System.err.println("Ошибка в тесте:");
-            System.err.println("Статус ответа: " + response.statusCode());
-            System.err.println("Тело ответа: " + response.getBody().asString());
-            throw e;
-        }
+        assertThat("Ответ должен содержать сообщение об ошибке",
+                response.jsonPath().getString("message"),
+                containsString("Недостаточно данных для поиска"));
     }
 
     @Test
@@ -78,27 +63,15 @@ public class OrdersAcceptTest {
     @Description("Проверяем обработку несуществующего ID курьера")
     @Step("Принятие заказа с несуществующим ID курьера")
     public void testAcceptOrderWithInvalidCourierId() {
-        try {
-            response = client.acceptOrder(VALID_ORDER_ID, INVALID_COURIER_ID);
+        response = client.acceptOrder(VALID_ORDER_ID, INVALID_COURIER_ID);
 
-            // Логирование информации о запросе
-            System.out.println("Статус ответа: " + response.statusCode());
-            System.out.println("Тело ответа: " + response.getBody().asString());
+        assertThat("Статус ответа должен быть 404",
+                response.statusCode(),
+                equalTo(404));
 
-            assertThat("Статус ответа должен быть 404",
-                    response.statusCode(),
-                    equalTo(404));
-
-            assertThat("Ответ должен содержать сообщение об ошибке",
-                    response.jsonPath().getString("message"),
-                    containsString("Курьера с таким id не существует"));
-        } catch (AssertionError e) {
-            // Вывод детальной информации при ошибке
-            System.err.println("Ошибка в тесте:");
-            System.err.println("Статус ответа: " + response.statusCode());
-            System.err.println("Тело ответа: " + response.getBody().asString());
-            throw e;
-        }
+        assertThat("Ответ должен содержать сообщение об ошибке",
+                response.jsonPath().getString("message"),
+                containsString("Курьера с таким id не существует"));
     }
 
     @Test
@@ -106,27 +79,15 @@ public class OrdersAcceptTest {
     @Description("Проверяем обработку несуществующего ID заказа")
     @Step("Принятие заказа с несуществующим ID заказа")
     public void testAcceptOrderWithInvalidOrderId() {
-        try {
-            response = client.acceptOrder(INVALID_ORDER_ID, VALID_COURIER_ID);
+        response = client.acceptOrder(INVALID_ORDER_ID, VALID_COURIER_ID);
 
-            // Добавляем логирование запроса и ответа
-            System.out.println("Статус ответа: " + response.statusCode());
-            System.out.println("Тело ответа: " + response.getBody().asString());
+        assertThat("Статус ответа должен быть 404",
+                response.statusCode(),
+                equalTo(404));
 
-            assertThat("Статус ответа должен быть 404",
-                    response.statusCode(),
-                    equalTo(404));
-
-            assertThat("Ответ должен содержать сообщение об ошибке",
-                    response.jsonPath().getString("message"),
-                    containsString("Заказа с таким id не существует"));
-        } catch (AssertionError e) {
-            // Выводим дополнительную информацию при ошибке
-            System.err.println("Ошибка в тесте:");
-            System.err.println("Статус ответа: " + response.statusCode());
-            System.err.println("Тело ответа: " + response.getBody().asString());
-            throw e;
-        }
+        assertThat("Ответ должен содержать сообщение об ошибке",
+                response.jsonPath().getString("message"),
+                containsString("Заказа с таким id не существует"));
     }
 
     @Test
@@ -148,5 +109,4 @@ public class OrdersAcceptTest {
                 response.jsonPath().getString("message"),
                 containsString("Этот заказ уже в работе"));
     }
-
 }

@@ -1,4 +1,4 @@
-package Courier;
+package courier;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Step;

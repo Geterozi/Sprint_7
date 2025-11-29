@@ -1,7 +1,6 @@
-package org.example.Orders;
+package org.example.orders;
 
 import java.util.List;
-import java.util.stream.Stream;
 
 public class OrderData {
     private String firstName;
@@ -28,15 +27,8 @@ public class OrderData {
         );
     }
 
-    // Поставщик данных для параметризованного теста создания заказа по цветам
-    public static Stream<List<String>> orderColorsProvider() {
-        return Stream.of(
-                List.of("BLACK"),     // один цвет BLACK
-                List.of("GREY"),      // один цвет GREY
-                List.of("BLACK", "GREY"), // два цвета
-                null                 // без цвета
-        );
-    }
+
+
 
     // Конструктор с основными полями
     public OrderData(String firstName, String lastName, String address, String metroStation,

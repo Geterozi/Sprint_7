@@ -1,4 +1,4 @@
-package Courier;
+package courier;
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
